@@ -66,6 +66,7 @@ export const consultaPorcentaje = async (req: Request, res: Response): Promise<R
         const response: QueryResult = await pool.query('SELECT * FROM porcentaje;');
         return res.status(200).json(response.rows);
     } catch (e) {
+        console.log(e);
         return res.status(500).json({
             mensaje: 'Error al realizar la consulta!',
             statusCode: 0
